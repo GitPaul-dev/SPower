@@ -1,0 +1,42 @@
+@layer base {
+
+  :root {
+    --max-website-width: 1440px;
+
+    --size-0: 5px;
+    --size-1: 10px;
+    --size-2: 15px;
+    --size-3: 20px;
+    --size-4: 25px;
+    --size-5: 30px;
+    --size-6: 35px;
+    --size-7: 40px;
+    --size-8: 50px;
+    --size-9: 80px;
+
+    --font-size-0: .75rem;
+    --font-size-1: .875rem;
+    --font-size-2: 1rem;
+    --font-size-3: 1.125rem;
+    --font-size-4: 1.25rem;
+    --font-size-5: 1.5rem;
+    --font-size-6: 2rem;
+
+    --font-weight-0: 400;
+    --font-weight-1: 600;
+    --font-weight-2: 700;
+    --font-weight-3: 900;
+
+    --border-radius: var(--size-2);
+
+    --color-0: hsl(0, 0%, 100%);
+    --color-1: hsl(0, 0%, 0%);
+    --color-2: hsl(0, 82%, 4%);
+    --color-3: hsl(0, 0%, 13%);
+    --color-4: hsl(1, 75%, 52%);
+    --color-5: hsl(36, 90%, 73%);
+    --color-6: hsl(4, 77%, 15%);
+    --color-7: hsl(0, 61%, 7%);
+    --color-8: hsla(0, 0%, 0%, 0);
+  }
+}

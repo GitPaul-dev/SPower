@@ -1,0 +1,299 @@
+@layer struggle {
+
+  .struggle {
+    --_padding-inline: var(--size-9);
+    position: relative;
+    z-index: 1;
+    padding-inline: var(--_padding-inline);
+
+    & .description {
+      flex-direction: row-reverse;
+      margin-inline: calc(var(--_padding-inline) * -1);
+      background-color: var(--color-5);
+
+      & div {
+        background-image:
+          linear-gradient(270deg, var(--color-5) 0%, rgba(255, 255, 255, 0) 80%),
+          url("../img/struggle-img.avif");
+        background-position: 5% center;
+      }
+
+      p {
+        padding-inline: 0 var(--_padding-inline);
+        inline-size: clamp(320px, 50vi, 650px);
+        font-size: clamp(var(--font-size-1), 2vi, var(--font-size-5));
+      }
+    }
+  }
+
+  .struggle__container {
+    margin-block-end: var(--size-7);
+    padding-block: var(--size-7);
+    padding-inline: var(--size-5);
+    border-radius: var(--border-radius);
+    color: var(--color-0);
+    background-color: #420707;
+
+    & div {
+      container: container-div / inline-size;
+      display: block flex;
+      flex-direction: column;
+      padding-block-start: 24px;
+      border: 2px solid var(--color-0);
+      border-radius: var(--border-radius);
+    }
+
+    & h2 {
+      align-self: center;
+      max-inline-size: 575px;
+      font-weight: var(--font-weight-2);
+      font-size: 36px;
+      text-align: center;
+
+      & strong {
+        font-weight: var(--font-weight-3);
+      }
+    }
+
+    & ul {
+      display: block grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: calc(100% / 3 + var(--size-7));
+      min-block-size: 585px;
+      background-image: url("../img/struggle-circle-desktop.webp");
+      background-repeat: no-repeat;
+      background-position: 55% center;
+      background-size: 65%;
+    }
+
+    & li:nth-child(1) {
+      place-self: end;
+      max-inline-size: 240px;
+    }
+
+    & li:nth-child(2) {
+      place-self: center;
+      max-inline-size: 235px;
+    }
+
+    & li:nth-child(3) {
+      place-self: center start;
+      padding-inline-start: var(--size-6);
+      max-inline-size: 280px;
+    }
+
+    & li:nth-child(4) {
+      place-self: center end;
+      padding-inline-end: var(--size-6);
+      max-inline-size: 230px;
+    }
+
+    & li:nth-child(5) {
+      place-self: end;
+      padding-block-end: var(--size-4);
+      max-inline-size: 175px;
+    }
+
+    & li:nth-child(6) {
+      place-self: center;
+      max-inline-size: 270px;
+    }
+
+    & p {
+      font-size: clamp(var(--font-size-2), 1.8vi, var(--font-size-5))
+    }
+  }
+
+  @container container-div (inline-size <=1015px) {
+
+    .struggle__container ul li {
+      inline-size: min-content;
+    }
+  }
+
+  @media (width <=1024px) {
+
+    .struggle__container {
+      --_indent-block-end: var(--size-2);
+
+      & div {
+        padding-block-end: var(--_indent-block-end);
+      }
+
+      & h2 {
+        margin-block-end: var(--_indent-block-end);
+        max-inline-size: 380px;
+        font-size: clamp(var(--font-size-3), 3vi, var(--font-size-6));
+      }
+
+      & ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: calc(100% / 3 + 90px) 0;
+        background-image: url("../img/struggle-circle-mobile.webp");
+        background-size: max(490px, 75%);
+      }
+
+      & li:nth-child(1) {
+        order: 1;
+        place-self: center;
+        max-inline-size: 240px;
+      }
+
+      & li:nth-child(2) {
+        order: 4;
+        place-self: start end;
+        max-inline-size: 235px;
+      }
+
+      & li:nth-child(3) {
+        order: 3;
+        place-self: center start;
+        padding-inline-start: var(--size-6);
+        max-inline-size: 280px;
+      }
+
+      & li:nth-child(4) {
+        order: 2;
+        place-self: start center;
+        padding: 0;
+        max-inline-size: 230px;
+      }
+
+      & li:nth-child(5) {
+        order: 6;
+        place-self: start;
+        padding-block-end: var(--size-4);
+        max-inline-size: 175px;
+      }
+
+      & li:nth-child(6) {
+        order: 5;
+        place-self: center;
+        max-inline-size: 270px;
+      }
+    }
+  }
+
+  @media (width <=768px) {
+
+    .struggle {
+      --_padding-inline: var(--size-5);
+      padding-block: 12px 0;
+
+      .description {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        gap: var(--size-3);
+
+        & div {
+          inline-size: 100vi;
+          background-image:
+            linear-gradient(360deg, var(--color-5) 0%, rgba(255, 255, 255, 0) 40%),
+            url("../img/struggle-img.avif");
+          background-size: 160%;
+          background-position: 17% 10%;
+        }
+
+        & p {
+          padding-inline: var(--size-8);
+          padding-block-end: 47px;
+          inline-size: 100vi;
+          font-size: clamp(var(--font-size-1), 2.8vi, var(--font-size-4));
+        }
+      }
+    }
+
+    .struggle__container {
+      margin-block-end: var(--size-5);
+      padding-inline: var(--size-3);
+      padding-block: var(--size-5);
+
+      & h2 {
+        font-weight: var(--font-weight-0);
+
+        & strong {
+          font-weight: var(--font-weight-1);
+        }
+      }
+
+      & ul {
+        gap: calc(100% / 3 + var(--size-2)) 0;
+        min-block-size: 455px;
+        background-size: max(350px, 60%);
+      }
+
+      & li:nth-child(1) {
+        place-self: end;
+        padding-block-end: var(--size-3);
+        padding-inline-start: var(--size-0);
+      }
+
+      & li:nth-child(2) {
+        padding-inline-start: var(--size-0);
+      }
+
+      & li:nth-child(3) {
+        padding: 0;
+      }
+
+      & li:nth-child(4) {
+        padding: 0;
+        padding-block-start: var(--size-3);
+      }
+
+      & li:nth-child(5) {
+        place-self: start center;
+        padding: 0;
+      }
+
+      & li:nth-child(6) {
+        order: 5;
+        place-self: end center;
+        padding-block-end: var(--size-6);
+      }
+
+      & p {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @media (width <=470px) {
+
+    .struggle .description {
+
+      & p {
+        padding-inline: var(--size-5);
+      }
+
+      & div {
+        background-size: cover;
+      }
+    }
+
+    .struggle__container {
+
+      & ul {
+        grid-template-columns: unset;
+        grid-auto-flow: column;
+        grid-auto-columns: 50vi;
+        background-size: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+
+      & li {
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+      }
+
+      & li:nth-child(3) {
+        place-self: end center;
+      }
+
+      & ul li {
+        inline-size: 100%;
+      }
+    }
+  }
+}

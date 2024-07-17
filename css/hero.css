@@ -1,0 +1,374 @@
+@layer hero {
+
+  .hero {
+    --decor-img-size: 551px;
+    --_hero-padding-inline: var(--size-8);
+    position: relative;
+    display: block flex;
+    flex-direction: column;
+    overflow-x: clip;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-block-end: -346px;
+      inset-inline-start: -129px;
+      inline-size: var(--decor-img-size);
+      block-size: var(--decor-img-size);
+      background-image: url("../img/yellow-thing.avif");
+      background-repeat: no-repeat;
+    }
+
+    .hero__txt {
+      align-self: center;
+      padding-block: var(--size-7) var(--size-8);
+      max-inline-size: 805px;
+      font-weight: var(--font-weight-2);
+      font-size: calc(var(--font-size-6) + .25rem);
+      text-align: center;
+    }
+
+    & form {
+      position: absolute;
+      inset-block-end: 215px;
+      inset-inline-end: var(--_hero-padding-inline);
+    }
+  }
+
+  .hero__container {
+    position: relative;
+    padding-inline: var(--_hero-padding-inline);
+    padding-block-start: var(--size-3);
+    color: var(--color-0);
+    background-image:
+      linear-gradient(89deg, var(--color-7) 0%, var(--color-8) 40%),
+      linear-gradient(58deg, var(--color-7) 0%, var(--color-8) 50%),
+      linear-gradient(174deg, var(--color-7) 0%, var(--color-8) 40%),
+      url("../img/hero-background.avif");
+    background-repeat: no-repeat;
+    background-position: 3% center;
+    overflow-x: clip;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inline-size: var(--decor-img-size);
+      block-size: var(--decor-img-size);
+      background-image: url("../img/yellow-thing.avif");
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      inset-block-start: -7px;
+      inset-inline-start: -378px;
+    }
+
+    &::after {
+      inset-block-end: -47px;
+      inset-inline-end: -457px;
+    }
+
+    & h2 {
+      margin-block-end: var(--size-4);
+      max-inline-size: 1010px;
+      font-size: calc(var(--font-size-6) * 2);
+
+      & span {
+        color: var(--color-5);
+      }
+    }
+
+    & .hero__descr {
+      margin-block-end: 110px;
+      max-inline-size: 555px;
+      font-weight: var(--font-weight-0);
+      font-size: 36px;
+
+      & .mobile {
+        display: none;
+      }
+    }
+
+    & div {
+      --_list-inline-size: 455px;
+      position: relative;
+      block-size: 540px;
+      background-image: url("../img/hero-circle-desktop.webp");
+      background-repeat: no-repeat;
+      background-position: 125px 45%;
+    }
+
+    & ul {
+      display: block flex;
+      flex-direction: column;
+      gap: var(--size-3);
+      inline-size: var(--_list-inline-size);
+    }
+
+    & li:nth-child(1) {
+      align-self: flex-end;
+      max-inline-size: 205px;
+    }
+
+    & li:nth-child(2) {
+      max-inline-size: 180px;
+    }
+
+    & li:nth-child(3) {
+      align-self: flex-start;
+      max-inline-size: 275px;
+    }
+
+    & li:nth-child(4) {
+      padding-block-start: var(--size-7);
+      max-inline-size: 135px;
+    }
+
+    & li:nth-child(even) {
+      align-self: center;
+    }
+
+    & img {
+      position: absolute;
+      inset-block-start: 14%;
+      inset-inline-start: 375px;
+      filter: drop-shadow(4px 0px 5px rgba(255, 255, 255, 0.25));
+    }
+  }
+
+  @media (width <=1330px) {
+
+    .hero {
+      --_hero-padding-inline: 32px;
+
+      & h2 {
+        font-size: clamp(var(--font-size-5), 5vi, calc(var(--font-size-6) * 2));
+      }
+    }
+
+    .hero__container {
+      background-size: cover;
+      background-position-x: 30%;
+
+      &::before {
+        inset-block-start: 220px;
+        opacity: .5;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      & .hero__descr {
+        font-size: clamp(var(--font-size-0), 3vi, calc(var(--font-size-6) + .25rem));
+      }
+
+      & p {
+        font-size: clamp(var(--font-size-2), 3vi, var(--font-size-5));
+      }
+
+      & div {
+        --_list-inline-size: 415px;
+        background-size: 750px;
+        background-position-x: 85px;
+      }
+
+      & ul {
+        padding-block-start: var(--size-5);
+      }
+
+      & li p {
+        font-size: calc(var(--font-size-2) + .2rem);
+      }
+
+      & img {
+        inset-block-start: 20%;
+        inset-inline-start: 305px;
+        inline-size: 325px;
+      }
+    }
+  }
+
+  @media (width <=1024px) {
+
+    .hero {
+
+      &::after {
+        --decor-img-size: 350px;
+        inset-inline-start: unset;
+        inset-inline-end: 37%;
+        inset-block-end: 265px;
+        background-size: var(--decor-img-size);
+      }
+
+      & .hero__txt {
+        position: relative;
+        z-index: 1;
+        padding-block: var(--size-5);
+        max-inline-size: 80vi;
+        font-size: calc(var(--font-size-6) - .2rem);
+      }
+
+      & form {
+        inset-block-end: 170px;
+        inset-inline: 0;
+        margin-inline: auto;
+      }
+    }
+
+    .hero__container {
+      --_form-place: 505px;
+      margin-block-end: var(--_form-place);
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  @media (width <=768px) {
+
+    .hero {
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        inset-block-end: 335px;
+        inset-inline-end: -200px;
+        inline-size: clamp(480px, 67vi, 520px);
+        block-size: 400px;
+        background-image: url("../img/hero-red-thing.svg");
+        background-repeat: no-repeat;
+      }
+
+      &::after {
+        --decor-img-size: 335px;
+        inset-inline-end: calc(50% - 105px);
+        inset-block-end: 200px;
+      }
+
+      & .hero__txt {
+        margin-block-start: -14px;
+        padding-block-start: 0px;
+        max-inline-size: 327px;
+        font-size: var(--font-size-3);
+      }
+
+      & form {
+        position: relative;
+        inset-block-start: -50px;
+      }
+    }
+
+    .hero__container {
+      --_hero-padding-inline: var(--size-8) var(--size-8);
+      margin-block-end: 0;
+      background-image:
+        linear-gradient(89deg, var(--color-7) 0%, var(--color-8) 30%),
+        linear-gradient(58deg, var(--color-7) 0%, var(--color-8) 50%),
+        linear-gradient(174deg, var(--color-7) 0%, var(--color-8) 25%),
+        url("../img/hero-background.avif");
+
+      & h2 {
+        margin-block-end: 14px;
+        padding-inline-end: var(--size-5);
+      }
+
+      & .hero__descr {
+        margin-block-end: var(--size-6);
+        font-size: var(--font-size-0);
+
+        & .desktop {
+          display: none;
+        }
+
+        & .mobile {
+          display: block flow;
+        }
+      }
+
+      & div {
+        block-size: 315px;
+        background-image: url("../img/hero-circle-mobile.webp");
+        background-size: 360px;
+        background-position: var(--size-7) -28px;
+      }
+
+      & ul {
+        padding-block-start: 0;
+        max-inline-size: 180px;
+      }
+
+      & li:nth-child(1) {
+        order: 4;
+        max-inline-size: 105px;
+      }
+
+      & li:nth-child(2) {
+        order: 2;
+        max-inline-size: 90px;
+      }
+
+      & li:nth-child(3) {
+        order: 1;
+        align-self: flex-end;
+        max-inline-size: 160px;
+      }
+
+      & li:nth-child(4) {
+        order: 3;
+        padding-block-start: var(--size-1);
+        max-inline-size: 65px;
+      }
+
+      & li:not(:nth-child(3)) {
+        align-self: flex-start;
+      }
+
+      & li:nth-child(-n + 2) {
+        padding-inline-start: var(--size-1);
+      }
+
+      & li p {
+        font-size: 13px;
+      }
+
+      & img {
+        inset-block-start: 65px;
+        inset-inline-start: 140px;
+        inline-size: 175px;
+      }
+    }
+  }
+
+  @media (width <=480px) {
+
+    .hero__container {
+      background-size: 188%;
+      background-position: 45% 10%;
+
+      & div {
+        inline-size: 100vi;
+      }
+    }
+  }
+
+  @media (width <=450px) {
+
+    .hero__container {
+      --_hero-padding-inline: 15px;
+      background-size: cover;
+      background-position: 37% center;
+
+      & div {
+        background-position: 18px -28px;
+      }
+
+      & img {
+        inset-inline-start: 118px;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@layer reset {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    margin-inline: auto;
+  }
+
+  ul,
+  ol {
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  dialog,
+  input {
+    margin: 0;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block flow;
+    max-inline-size: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  select,
+  label {
+    cursor: pointer;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}

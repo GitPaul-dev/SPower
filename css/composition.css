@@ -1,0 +1,421 @@
+@layer composition {
+
+  .composition {
+    position: relative;
+    display: block grid;
+    overflow-x: clip;
+
+    &::after {
+      --_pseudo-size: 388px;
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset-block-start: 17%;
+      inset-inline: 0;
+      margin-inline: auto;
+      inline-size: var(--_pseudo-size);
+      block-size: var(--_pseudo-size);
+      background-image: url("../img/yellow-thing.avif");
+      background-size: var(--_pseudo-size);
+    }
+
+    & .form-wrapper {
+      position: absolute;
+      inset-block-start: 55px;
+      inset-inline-end: 20%;
+
+      &::before,
+      &::after {
+        --_pseudo-size: 156px;
+        content: "";
+        position: absolute;
+        inline-size: var(--_pseudo-size);
+        block-size: var(--_pseudo-size);
+        background-image: url("../img/composition-circle-min.webp");
+        background-repeat: no-repeat;
+      }
+
+      &::before {
+        z-index: 1;
+        inset-block-start: var(--size-8);
+        inset-inline-start: -80px;
+      }
+
+      &::after {
+        --_pseudo-size: 122px;
+        inset-block-end: 176px;
+        inset-inline-end: -162px;
+        background-size: var(--_pseudo-size);
+      }
+    }
+
+    & .composition__descr {
+      --_font-size: var(--font-size-4);
+      place-self: center;
+      position: relative;
+      z-index: 1;
+      margin-block-end: var(--size-5);
+      max-inline-size: 510px;
+      font-weight: var(--font-weight-0);
+      font-size: var(--_font-size);
+      text-align: center;
+      color: var(--color-2);
+
+      & strong {
+        font-weight: var(--font-weight-3);
+        font-size: calc(var(--_font-size) + .75rem);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset-inline-start: -20vi;
+        inset-block: 0;
+        margin-block: auto;
+        inline-size: 175px;
+        block-size: 110px;
+        background-image: url("../img/composition-pills-desktop.webp");
+        background-repeat: no-repeat;
+      }
+    }
+
+    & ul {
+      display: block grid;
+      gap: var(--size-3);
+      grid-template-columns: repeat(auto-fit, minmax(435px, 1fr));
+      padding-block: 60px 70px;
+      padding-inline: var(--size-8);
+      background-image:
+        linear-gradient(180deg, var(--color-0) 0%, rgba(255, 255, 255, 0) 100%),
+        url("../img/composition-background-decor.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    & li {
+      position: relative;
+      z-index: 1;
+      padding-block: var(--size-6) var(--size-1);
+      padding-inline: 55px var(--size-7);
+      border-radius: var(--size-3);
+      background-color: var(--color-0);
+      box-shadow: 0 4px 80px 0 rgba(0, 0, 0, 0.25);
+
+      & h3 {
+        padding-block-end: var(--size-3);
+        max-inline-size: 341px;
+        font-size: clamp(18px, 3vi, var(--size-5));
+        text-transform: uppercase;
+        color: var(--color-4);
+      }
+
+      & p {
+        font-weight: var(--font-weight-1);
+        font-size: clamp(14px, 3vi, 18px);
+        color: var(--color-3);
+      }
+
+      & img {
+        position: absolute;
+        inset-block-start: 0px;
+        inset-inline-end: 0px;
+      }
+    }
+
+    & li:nth-child(1) img {
+      inline-size: 45%;
+      inset-block-start: -77px;
+      inset-inline-end: -40px;
+    }
+
+    & li:nth-child(2) img {
+      inline-size: 66%;
+      inset-block-start: -160px;
+      inset-inline-end: -79px;
+    }
+
+    & li:nth-child(3) img {
+      inline-size: 56%;
+      inset-block-start: -120px;
+      inset-inline-end: -75px;
+    }
+
+    & li:nth-child(4) {
+
+      & img {
+        inline-size: 38%;
+        inset-block-start: -110px;
+        inset-inline-end: -32px;
+      }
+
+      & h3 {
+        inline-size: min-content;
+      }
+    }
+
+    & .recipe {
+      background-color: var(--color-5);
+    }
+  }
+
+  .composition__container {
+    position: relative;
+    margin-block-end: 160px;
+    padding-block: 75px var(--size-6);
+    background-image: url("../img/composition-background.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: clip;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      inset-inline-end: -25%;
+      inset-block-start: -60%;
+      inline-size: 110%;
+      block-size: 170%;
+      background-image: url("../img/red-thing-3.svg");
+      background-position: center;
+    }
+
+    &::after {
+      inset-block-start: -28%;
+      inset-inline-end: 0;
+      block-size: 120%;
+      inline-size: 100%;
+      background-image: url("../img/red-thing-2.svg");
+      background-position: center;
+    }
+
+    & h2 {
+      margin-block-end: var(--size-3);
+      max-inline-size: 420px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--color-0);
+    }
+
+    &>div {
+      position: relative;
+      z-index: 1;
+      display: block grid;
+      justify-items: center;
+      inline-size: 50%;
+      background-image: url("../img/red-thing-1.svg");
+      background-repeat: no-repeat;
+      background-position-y: 40%;
+      background-size: 80%;
+    }
+
+    & .img-wrapper {
+      padding-inline: var(--size-4);
+      padding-block: var(--size-7);
+      background-image: url("../img/composition-circle-desctop.webp");
+    }
+
+    & img {
+      max-inline-size: 205px;
+      filter: drop-shadow(4px 0px 5px rgba(255, 255, 255, 0.25));
+    }
+  }
+
+  @media (width <=1009px) {
+
+    .composition li {
+      padding-block: var(--size-4);
+      padding-inline: var(--size-7);
+
+      & p {
+        max-inline-size: 80%;
+      }
+
+      &:nth-child(1) img {
+        inline-size: 30%;
+        inset-block-start: -55px;
+        inset-inline-end: -40px;
+      }
+
+      &:nth-child(2) img {
+        inline-size: 40%;
+        inset-block-start: -80px;
+        inset-inline-end: -80px;
+      }
+
+      &:nth-child(3) img {
+        inline-size: 38%;
+        inset-block-start: -60px;
+        inset-inline-end: -75px;
+      }
+
+      &:nth-child(4) img {
+        inline-size: 28%;
+        inset-block-start: -65px;
+        inset-inline-end: -45px;
+      }
+    }
+  }
+
+  @media (width <=991px) {
+
+    .composition {
+
+      & .form-wrapper {
+        inset-inline-end: 10%;
+
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+
+      .composition__descr {
+        font-size: clamp(14px, 2.5vi, 24px);
+
+        & strong {
+          font-size: calc(clamp(14px, 2.5vi, 24px) + 2px);
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (width <=768px) {
+
+    .composition {
+
+      &::after {
+        --pseudo-size: 345px;
+        z-index: 0;
+        inset-block-start: 36%;
+        inset-inline-start: -30%;
+        margin-inline: 0;
+      }
+
+      & .form-wrapper {
+        place-self: center;
+        inset-block-start: clamp(300px, 52vi, 360px);
+        inset-inline: 0;
+      }
+
+      & form {
+        inset-inline: 0;
+        margin-inline: auto;
+      }
+
+      & .composition__descr {
+        inline-size: clamp(182px, 45vi, 455px);
+
+        &::before {
+          --pseudo-size: 85px;
+          display: block flow;
+          inset-block-start: -75px;
+          inset-inline: 0;
+          margin-inline: auto;
+          margin-block: 0;
+          background-image: url("../img/composition-pills-mobile.webp");
+        }
+      }
+
+      & ul {
+        grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+        padding-block: var(--size-2) 70px;
+      }
+
+      & ul li h3 {
+        inline-size: min-content;
+      }
+
+      & li:nth-child(1) img {
+        inline-size: 183px;
+      }
+
+      & li:nth-child(2) img {
+        inline-size: 245px;
+      }
+
+      & li:nth-child(3) img {
+        inline-size: 230px;
+        rotate: 20deg;
+      }
+
+      & li:nth-child(4) img {
+        inline-size: 170px;
+      }
+
+      & li p {
+        max-inline-size: 100%;
+      }
+    }
+
+    .composition__container {
+      --_form-place: 560px;
+      margin-block-end: var(--_form-place);
+      padding-block: var(--size-4) var(--size-6);
+      background-image:
+        linear-gradient(180deg, #250808 0%, var(--color-8) 100%),
+        url("../img/composition-background-mobile.webp");
+      background-size: cover;
+      background-position: center -110px;
+
+      &::before {
+        inset-inline-start: 127px;
+        inset-block-start: -54px;
+        inline-size: 100%;
+        block-size: 105%;
+        background-image: url("../img/red-thing-3-mobile.svg");
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &>div {
+        inline-size: 100vi;
+      }
+
+      & h2 {
+        max-inline-size: 245px;
+        font-size: clamp(var(--font-size-1), 2.5vi, var(--font-size-5));
+      }
+
+      & .img-wrapper {
+        padding-inline: var(--size-3);
+        padding-block: var(--size-6);
+        background-image: url("../img/composition-circle-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      & img {
+        inline-size: clamp(130px, 27vi, 185px);
+      }
+    }
+  }
+
+  @media (width <=470px) {
+
+    .composition {
+
+      & ul {
+        padding-inline: var(--size-3);
+      }
+
+      & li img {
+        display: none;
+      }
+
+      & ul li h3 {
+        inline-size: 80%;
+      }
+    }
+  }
+
+}

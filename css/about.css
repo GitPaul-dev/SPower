@@ -1,0 +1,210 @@
+@layer about {
+
+  .about {
+    --_span-padding: var(--size-5);
+
+    .imagine {
+      margin-block-end: var(--size-7);
+
+      & div {
+        background-image:
+          linear-gradient(88deg, var(--color-0) 0%, rgba(58, 58, 58, 0) 40%),
+          url("../img/imagine-img.avif");
+        background-position: center;
+      }
+
+      & span {
+        padding-block-start: var(--_span-padding);
+      }
+    }
+
+    .poligamy {
+      margin-block-end: var(--size-6);
+      margin-inline: var(--size-6);
+      padding-inline: var(--size-6);
+      padding-block: var(--size-3);
+      border-radius: var(--size-2);
+      background-color: #420707;
+
+      & div {
+        display: block flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--size-2);
+        border: 2px solid var(--color-0);
+        border-radius: var(--size-2);
+        padding-inline: var(--size-5);
+        padding-block: var(--size-6);
+      }
+
+      & h3 {
+        max-inline-size: 505px;
+        font-weight: var(--font-weight-0);
+        font-size: var(--font-size-4);
+        text-align: center;
+        color: var(--color-0);
+      }
+
+      & ul {
+        align-self: stretch;
+        display: block flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--size-5);
+      }
+
+      & li {
+        position: relative;
+        z-index: 1;
+        padding-block: 130px var(--size-3);
+        padding-inline: var(--size-6);
+      }
+
+      li::before {
+        --_inset: var(--size-3);
+        content: "";
+        position: absolute;
+        inset-block-start: calc(var(--_inset) * -1);
+        inset-block-end: var(--_inset);
+        inset-inline-start: calc(var(--_inset) * -1);
+        inset-inline-end: var(--_inset);
+        border-radius: var(--size-2);
+        background-image: url("../img/poligamy-blur.svg");
+        filter: blur(42px);
+      }
+
+      li::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        margin: auto;
+        border-radius: var(--size-2);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      & li:nth-child(1)::after {
+        background-image:
+          linear-gradient(359deg, var(--color-0) 0%, var(--color-8) 80%),
+          url("../img/poligamy-img-1.avif");
+      }
+
+      & li:nth-child(2)::after {
+        background-image:
+          linear-gradient(0deg, var(--color-0) 0%, var(--color-8) 60%),
+          url("../img/poligamy-img-2.avif");
+      }
+
+      & li:nth-child(3)::after {
+        background-image:
+          linear-gradient(359deg, var(--color-0) 0%, var(--color-8) 100%),
+          url("../img/poligamy-img-3.avif");
+      }
+
+      & h4 {
+        position: relative;
+        z-index: 10;
+        inline-size: 310px;
+        font-size: var(--font-size-4);
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--color-2);
+
+        & span {
+          display: block flow;
+          font-size: var(--font-size-2);
+        }
+      }
+    }
+
+    .doctors {
+      background-color: var(--color-5);
+
+      & div {
+        background-image:
+          linear-gradient(89deg, var(--color-5) 0%, rgba(255, 255, 255, 0) 30%),
+          url("../img/doctors-img.avif");
+        background-position-y: 90%;
+      }
+
+      & span {
+        padding-block-end: var(--_span-padding);
+      }
+    }
+  }
+
+  @media (width <=768px) {
+
+    .about {
+
+      & .imagine {
+        margin-block-end: var(--size-5);
+
+        & div {
+          background-image:
+            linear-gradient(360deg, var(--color-0) 0%, rgba(36, 36, 36, 0) 65%),
+            url("../img/imagine-img.avif");
+          background-position: 62% center;
+        }
+      }
+
+      & .poligamy {
+        padding-block: var(--size-4) var(--size-5);
+        padding-inline: var(--size-3);
+
+        & h3 {
+          margin-block-end: var(--size-4);
+          inline-size: clamp(208px, 42vi, 385px);
+          font-size: clamp(var(--font-size-1), 2.8vi, var(--font-size-4));
+        }
+
+        & div {
+          padding-block: var(--size-3) var(--size-7);
+        }
+
+        & ul {
+          gap: var(--size-4);
+        }
+
+        & li {
+          padding-block: 160px var(--size-1);
+          padding-inline: 0;
+        }
+
+        & h4 {
+          inset-block-end: 26px;
+        }
+      }
+
+      & .doctors {
+        padding-block-end: calc(50px + var(--size-1));
+
+        & div {
+          background-image:
+            linear-gradient(360deg, var(--color-5) 5.7%, rgba(255, 255, 255, 0) 40%),
+            url("../img/doctors-img.avif");
+          background-position: 10% 20%;
+        }
+      }
+    }
+  }
+
+  @media (width <=440px) {
+
+    .about .imagine {
+
+      & div {
+        background-position: 55% center;
+      }
+    }
+
+    .about .poligamy {
+      margin-inline: var(--size-1);
+
+      & h4 {
+        inline-size: 230px;
+      }
+    }
+  }
+}
